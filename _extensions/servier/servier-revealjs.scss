@@ -1,0 +1,216 @@
+/*-- scss:defaults --*/
+
+$theme-white: #ffffff;
+$theme-midnight: #24226A;
+$theme-tangerine: #F55B41;
+$theme-lightblue: #d4def2;
+$theme-purple: #9C7DCC;
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Parisienne);
+
+$body-bg: $theme-white;
+$body-color: $theme-midnight;
+$code-color: $theme-midnight;
+$link-color: $theme-purple;
+
+$presentation-heading-color: $theme-midnight;
+$presentation-heading-font: 'Muli', sans-serif;
+$font-family-sans-serif: 'Muli', sans-serif;
+$code-block-bg: $theme-lightblue;
+
+
+/* Default for servier-revealjs
+$presentation-font-size-root: 30px;
+$presentation-h1-font-size: 2.7em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1.3em;
+$presentation-h4-font-size: 1em;
+$code-block-font-size: 0.7em;
+$presentation-font-smaller: 0.7;
+*/
+
+$presentation-font-size-root: 30px;
+$presentation-h1-font-size: 2.7em;
+$code-block-font-size: 0.6em;
+
+
+/*-- scss:rules --*/
+
+.reveal div.sourceCode {
+  border: unset !important;
+}
+
+div.sourceCode {
+  background-color: unset !important;
+}
+
+.tangerine {
+  color: $theme-tangerine;
+}
+
+.midnight {
+  color: $theme-midnight;
+}
+
+.cursive {
+  font-family: 'Parisienne', cursive;
+}
+
+.center-h {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.circular-square {
+  border-radius: 50%;
+}
+
+.slide {
+  h2 {
+   margin-bottom: 0.7em;
+  }
+}
+
+@mixin center-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+@mixin bg-contain {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin bg-title-midnight {
+  background-image: url("../../../../../_extensions/servier/slide-title-midnight.png");
+  background-color: $theme-midnight;
+}
+
+@mixin bg-title-white {
+  background-image: url("../../../../../_extensions/servier/slide-title-white.png");
+  background-color: $theme-white;
+}
+
+@mixin one-line-title {
+  //text-align: left;
+  font-size: 2.7em;
+  margin-top: 2.2em;
+  margin-bottom: 1.25em;
+}
+
+@mixin two-lines-title {
+  text-align: left;
+  font-size: 2.6em;
+  margin-top: 1.3em;
+  margin-bottom: 1.15em;
+}
+
+@mixin project-date-author {
+  //text-align: left;
+  margin-left: 6.5%;
+  line-height: 1em;
+}
+
+@mixin title-midnight {
+  color: $theme-midnight !important;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+@mixin title-white {
+  color: $theme-white !important;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.servier-title {
+  
+  &:is(.slide-background) {
+    @include bg-contain;
+    @include bg-title-midnight;
+  }
+  
+  h2, p {
+    @include title-white
+  }
+  h2 {
+    @include one-line-title;
+  }
+  p {
+    @include project-date-author;
+  }
+  
+  
+}
+
+.servier-title-long {
+  
+  &:is(.slide-background) {
+    @include bg-contain;
+    @include bg-title-midnight;
+  }
+  
+  h2, p {
+    @include title-white
+  }
+  h2 {
+    @include two-lines-title;
+  }
+  p {
+    @include project-date-author;
+  }
+  
+}
+
+
+.servier-title-white {
+  
+  &:is(.slide-background) {
+    @include bg-contain;
+    @include bg-title-white;
+  }
+  
+  h2, p {
+    @include title-midnight
+  }
+  h2 {
+    @include one-line-title;
+  }
+  p {
+    @include project-date-author;
+  }
+  
+}
+
+.servier-title-white-long {
+  
+  &:is(.slide-background) {
+    @include bg-contain;
+    @include bg-title-white;
+  }
+  
+  h2, p {
+    @include title-midnight
+  }
+  h2 {
+    @include two-lines-title;
+  }
+  p {
+    @include project-date-author;
+  }
+
+}
+
+.servier-end {
+  
+  &:is(.slide-background) {
+    background-image: url("../../../../../_extensions/servier/slide-end.png");
+    background-color: $theme-midnight;
+    @include bg-contain;
+  }
+  
+}
+

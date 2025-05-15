@@ -1,0 +1,24 @@
+title: servier
+author: Antoine Bichat
+version: 0.2.1
+contributes:
+  formats:
+    html:
+      code-fold: true
+      toc: true
+      toc-depth: 3
+      toc-location: left
+      toc-title: Contents
+      theme: cosmo
+      title-block-banner: "#24226A"
+      embed-resources: true
+      css: "servier-html.css"
+      mainfont: "Muli"
+      fontcolor: "#24226A"
+      linkcolor: "#F55B41"
+    revealjs:
+      theme: "servier-revealjs.scss"
+      width: 1280
+      height: 720
+      code-line-numbers: true
+      include-after-body: "_extensions/servier/clean_title_end.html"
